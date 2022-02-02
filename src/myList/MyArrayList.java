@@ -31,7 +31,7 @@ public class MyArrayList <T> {
             throw new IndexOutOfBoundsException();
         }
         System.arraycopy(data, index + 1, data, index, size - index - 1);
-        data[--size] = null;
+        data[size--] = null;
     }
 
     public void clear() {
