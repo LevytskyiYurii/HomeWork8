@@ -44,8 +44,8 @@ public class MyQueue <T> {
         if (index > size) {
             throw new IndexOutOfBoundsException();
         }
-        System.arraycopy(queue, index-1, queue, index, size - (index-1));
-        size--;
+        System.arraycopy(queue, index + 1, queue, index, size- 1);
+        queue[size--] = null;
     }
 
     public void clear() {
