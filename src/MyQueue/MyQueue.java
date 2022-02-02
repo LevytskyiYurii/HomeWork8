@@ -1,6 +1,5 @@
 package MyQueue;
 
-import java.util.Queue;
 import java.util.StringJoiner;
 
 public class MyQueue <T> {
@@ -15,7 +14,7 @@ public class MyQueue <T> {
         queue = new Object[initialSize];
     }
 
-    public void add(T value)
+    public void push(T value)
     {
         queue[rear] = value;
         rear++;
@@ -41,9 +40,6 @@ public class MyQueue <T> {
     }
     public void remove(int index)
     {
-        if (index > size) {
-            throw new IndexOutOfBoundsException();
-        }
         System.arraycopy(queue, index + 1, queue, index, size- 1);
         queue[size--] = null;
     }

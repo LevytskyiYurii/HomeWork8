@@ -4,11 +4,11 @@ package MyQueue;
 public class QueueTest {
     public static void main(String[] args) {
     MyQueue<Integer> q = new MyQueue<Integer>();
-    q.add(15);
-    q.add(20);
-    q.add(56);
-    q.add(20);
-    q.add(56);
+    q.push(15);
+    q.push(20);
+    q.push(56);
+    q.push(20);
+    q.push(56);
 
         System.out.println(q);
         System.out.println("Size is: " + q.size());
