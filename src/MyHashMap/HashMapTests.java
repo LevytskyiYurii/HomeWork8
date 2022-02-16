@@ -15,9 +15,9 @@ public class HashMapTests {
 
 
         System.out.println(myHashMap);
-        System.out.println(myHashMap.get("A"));
-        System.out.println(myHashMap.remove("A"));
-        myHashMap.remove("2");
-        System.out.println(myHashMap);
+//        System.out.println(myHashMap.get("A"));
+//        System.out.println(myHashMap.remove("A"));
+//        myHashMap.remove("2");
+//        System.out.println(myHashMap);
     }
 }

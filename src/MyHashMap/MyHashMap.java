@@ -9,17 +9,19 @@ public class MyHashMap<K, V> {
         table = new Entry[initialSize];
     }
 
-    public void put(K key, V value){
+    public void put(K key, V value) {
         int hash = key.hashCode() % initialSize;
         Entry<K, V> e = table[hash];
 
-        if (e == null){
+        if (e == null) {
             table[hash] = new Entry<K, V>(key, value);
         }
-        if (e.getKey() == key){
-            e.setValue(value);
+        if (e != null) {
+            if (e.getKey() == key) {
+                e.setValue(value);
+            }
+            e.next = new Entry<K, V>(key, value);
         }
-        e.next = new Entry<K, V>(key, value);
     }
 
     public V get(K key){

@@ -21,12 +21,14 @@ public class Entry<K, V> {
     public void setValue(V value) {
         this.value = value;
     }
+
     @Override
     public String toString() {
-        Entry<K, V> temp = this;
+        Entry<K,V> temp = this;
         StringBuilder sb = new StringBuilder();
         while (temp != null) {
-            sb.append(temp.key).append(" -> ").append(temp.value);
+            sb.append(temp.key + " -> " + temp.value + ",");
+            temp = temp.next;
         }
         return sb.toString();
     }
