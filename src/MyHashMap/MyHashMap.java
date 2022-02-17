@@ -1,9 +1,12 @@
 package MyHashMap;
 
+import java.util.Arrays;
+
 public class MyHashMap<K, V> {
-    private final int initialSize = 8;
-    private Entry<K, V> table[];
-    private Entry<K, V> next;
+    private int size = 0;
+    private final int initialSize = 20;
+    public Entry<K, V>[] table;
+    public Entry<K, V> next;
 
     public MyHashMap(){
         table = new Entry[initialSize];
@@ -15,6 +18,7 @@ public class MyHashMap<K, V> {
 
         if (e == null) {
             table[hash] = new Entry<K, V>(key, value);
+            size++;
         }
     }
 
@@ -42,9 +46,28 @@ public class MyHashMap<K, V> {
         if (e.getKey() == key){
             table[hash] = e.next;
             e.next = null;
+            size--;
         }
         return e;
     }
+    public void clear(){
+        for (int i = 0; i < initialSize; i++) {
+            table[i] = null;
+        }
+    }
 
+    public int size() {
+        return size;
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < initialSize; i++) {
+            if (table[i] != null) {
+                sb.append(table[i]).append("\n");
+            }
+        }
+        return sb.toString();
+    }
 }

@@ -1,15 +1,17 @@
 package MyHashMap;
 
-import java.util.Arrays;
-
 public class Entry<K, V> {
-    private K key;
-    private V value;
+    public K key;
+    public V value;
     public Entry<K, V> next;
 
     public Entry(K key, V value) {
         this.key = key;
         this.value = value;
+    }
+
+    public Entry() {
+
     }
 
     public K getKey() {
