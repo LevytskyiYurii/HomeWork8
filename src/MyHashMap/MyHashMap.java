@@ -16,12 +16,6 @@ public class MyHashMap<K, V> {
         if (e == null) {
             table[hash] = new Entry<K, V>(key, value);
         }
-        if (e != null) {
-            if (e.getKey() == key) {
-                e.setValue(value);
-            }
-            e.next = new Entry<K, V>(key, value);
-        }
     }
 
     public V get(K key){

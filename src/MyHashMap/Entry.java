@@ -1,5 +1,7 @@
 package MyHashMap;
 
+import java.util.Arrays;
+
 public class Entry<K, V> {
     private K key;
     private V value;
@@ -27,7 +29,7 @@ public class Entry<K, V> {
         Entry<K,V> temp = this;
         StringBuilder sb = new StringBuilder();
         while (temp != null) {
-            sb.append(temp.key + " -> " + temp.value + ",");
+            sb.append(temp.key).append(" -> ").append(temp.value);
             temp = temp.next;
         }
         return sb.toString();
