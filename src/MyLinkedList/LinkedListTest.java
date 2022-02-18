@@ -1,18 +1,16 @@
 package MyLinkedList;
 
 public class LinkedListTest {
-    public static MyLinkedList<String> List;
-
     public static void main(String[] args) {
 
 
-        List = new MyLinkedList<String>();
+       MyLinkedList<String> List = new MyLinkedList<String>();
 
-        List.add("1");
-        List.add("2");
-        List.add("3");
-        List.add("4");
-        List.add("5");
+        List.add("a");
+        List.add("b");
+        List.add("c");
+        List.add("d");
+        List.add("e");
 
 
         System.out.println("Print: LinkedList:   " + List);
@@ -29,5 +27,13 @@ public class LinkedListTest {
         List.clear();
 
         System.out.println("Print new: LinkedList:   " + List);
+
+        MyLinkedList<Integer> List2 = new MyLinkedList<Integer>();
+        List2.add(1);
+        List2.add(2);
+        List2.add(3);
+        List2.add(4);
+
+        System.out.println("Print Integer: LinkedList:   " + List2);
     }
 }

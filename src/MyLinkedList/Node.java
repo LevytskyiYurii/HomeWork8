@@ -1,14 +1,14 @@
 package MyLinkedList;
 
 public class Node<N> {
-    public N next;
-    public N data;
+    Node next;
+    N data;
 
     public Node(N dataValue) {
         next = null;
         data = dataValue;
     }
-    public Node(N dataValue, N nextValue) {
+    public Node(N dataValue, Node nextValue) {
         next = nextValue;
         data = dataValue;
     }
@@ -18,11 +18,11 @@ public class Node<N> {
     public void setData(N dataValue) {
         data = dataValue;
     }
-    public N getNext() {
+    public Node getNext() {
         return next;
     }
 
-    public void setNext(N nextValue) {
+    public void setNext(Node nextValue) {
         next = nextValue;
     }
 

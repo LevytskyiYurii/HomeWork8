@@ -23,15 +23,13 @@ public class MyLinkedList <N> {
         if (head == null){
             head = new Node<>(value);
         }
-        Node<N> temp = new Node(value);
+        Node<N> temp = new Node<>(value);
         Node<N> current =  head;
 
-        if (current != null){
-            while (current.getNext() != null) {
-                current = current.getNext();
-            }
-            current.setNext((N) temp);
+        while (current.getNext() != null) {
+            current = current.getNext();
         }
+        current.setNext(temp);
         incrementCounter();
     }
 
@@ -40,13 +38,10 @@ public class MyLinkedList <N> {
     }
 
     public void remove(int index) {
-        if (index >= 0) {
-            size();
-        }
         Node<N> current = head;
         if (head != null) {
             for (int i = 0; i < index; i++) {
-                current = current.getNext();
+               current = current.getNext();
             }
             current.setNext(current.getNext().getNext());
 
@@ -70,8 +65,8 @@ public class MyLinkedList <N> {
         return current;
     }
 
-    public N clear(){
-        return (N) (head = null);
+    public Node clear(){
+        return head = null;
     }
 
     public String toString() {
