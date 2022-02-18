@@ -14,7 +14,7 @@ public class MyQueue <T> {
         queue = new Object[initialSize];
     }
 
-    public void push(T value)
+    public void add(T value)
     {
         queue[rear] = value;
         rear++;

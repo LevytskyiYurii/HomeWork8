@@ -1,12 +1,12 @@
 package MyLinkedList;
 
 public class LinkedListTest {
-    public static MyLinkedList List;
+    public static MyLinkedList<String> List;
 
     public static void main(String[] args) {
 
 
-        List = new MyLinkedList();
+        List = new MyLinkedList<String>();
 
         List.add("1");
         List.add("2");

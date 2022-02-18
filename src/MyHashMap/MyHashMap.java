@@ -1,12 +1,9 @@
 package MyHashMap;
 
-import java.util.Arrays;
-
 public class MyHashMap<K, V> {
     private int size = 0;
     private final int initialSize = 20;
     public Entry<K, V>[] table;
-    public Entry<K, V> next;
 
     public MyHashMap(){
         table = new Entry[initialSize];

@@ -1,8 +1,8 @@
 package MyLinkedList;
 
-public class MyLinkedList {
+public class MyLinkedList <N> {
     private static int counter;
-    private Node head;
+    public Node<N> head;
 
     public MyLinkedList(){
     }
@@ -19,18 +19,18 @@ public class MyLinkedList {
         counter--;
     }
 
-    public void add(Object value){
+    public void add(N value){
         if (head == null){
-            head = new Node(value);
+            head = new Node<>(value);
         }
-        Node temp = new Node(value);
-        Node current = head;
+        Node<N> temp = new Node(value);
+        Node<N> current =  head;
 
         if (current != null){
             while (current.getNext() != null) {
                 current = current.getNext();
             }
-            current.setNext(temp);
+            current.setNext((N) temp);
         }
         incrementCounter();
     }
@@ -40,24 +40,18 @@ public class MyLinkedList {
     }
 
     public void remove(int index) {
-        boolean removed;
-        if (index < 1 || index > size())
-            removed = false;
-
-        Node current = head;
+        if (index >= 0) {
+            size();
+        }
+        Node<N> current = head;
         if (head != null) {
             for (int i = 0; i < index; i++) {
-                if (current.getNext() == null)
-                    removed = false;
-
                 current = current.getNext();
             }
             current.setNext(current.getNext().getNext());
 
             decrementCounter();
-            removed = false;
         }
-        removed = false;
     }
 
     public Object get(int index){
@@ -76,8 +70,8 @@ public class MyLinkedList {
         return current;
     }
 
-    public Object clear(){
-        return head = null;
+    public N clear(){
+        return (N) (head = null);
     }
 
     public String toString() {

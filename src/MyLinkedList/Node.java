@@ -1,28 +1,28 @@
 package MyLinkedList;
 
-public class Node {
-    Node next;
-    Object data;
+public class Node<N> {
+    public N next;
+    public N data;
 
-    public Node(Object dataValue) {
+    public Node(N dataValue) {
         next = null;
         data = dataValue;
     }
-    public Node(Object dataValue, Node nextValue) {
+    public Node(N dataValue, N nextValue) {
         next = nextValue;
         data = dataValue;
     }
-    public Object getData() {
+    public N getData() {
         return data;
     }
-    public void setData(Object dataValue) {
+    public void setData(N dataValue) {
         data = dataValue;
     }
-    public Node getNext() {
+    public N getNext() {
         return next;
     }
 
-    public void setNext(Node nextValue) {
+    public void setNext(N nextValue) {
         next = nextValue;
     }
 
