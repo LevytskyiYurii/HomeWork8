@@ -32,17 +32,17 @@ public class MyStack <T> {
         size = 0;
     }
 
-    public Object size()
+    public int size()
     {
         return size;
     }
 
-    public Object peek()
+    public T peek()
     {
-        return stack[rear-1];
+        return (T) stack[rear-1];
     }
 
-    public Object pop()
+    public T pop()
     {
         T lastObject = (T) stack[rear-1];
         size--;

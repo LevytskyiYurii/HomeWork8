@@ -21,12 +21,12 @@ public class MyQueue <T> {
         size++;
     }
 
-    public Object peek()
+    public T peek()
     {
-        return queue[front];
+        return (T) queue[front];
     }
 
-    public Object poll()
+    public T poll()
     {
         T value = (T) queue[front];
         front++;
@@ -34,10 +34,11 @@ public class MyQueue <T> {
         return value;
     }
 
-    public Object size()
+    public int size()
     {
         return size;
     }
+
     public void remove(int index)
     {
         System.arraycopy(queue, index + 1, queue, index, size- 1);
