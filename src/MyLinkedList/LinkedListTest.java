@@ -35,5 +35,7 @@ public class LinkedListTest {
         List2.add(4);
 
         System.out.println("Print Integer: LinkedList:   " + List2);
+
+     System.out.println("Clear List :" + List2.clear());
     }
 }

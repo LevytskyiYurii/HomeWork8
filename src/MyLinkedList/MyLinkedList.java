@@ -49,7 +49,7 @@ public class MyLinkedList <N> {
         }
     }
 
-    public Object get(int index){
+    public N get(int index){
         if (index < 0)
             return null;
         Node current = null;
@@ -60,13 +60,13 @@ public class MyLinkedList <N> {
                     return null;
                 current = current.getNext();
             }
-            return current.getData();
+            return (N) current.getData();
         }
-        return current;
+        return (N) current;
     }
 
-    public Node clear(){
-        return head = null;
+    public N clear(){
+        return (N) (head = null);
     }
 
     public String toString() {
